@@ -17,6 +17,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden;
         }
         .option {
             padding: 20px;
@@ -45,6 +46,13 @@
         .hidden {
             display: none;
         }
+        .car {
+            position: absolute;
+            bottom: 10%;
+            left: -200px;
+            width: 150px;
+            transition: transform 2s ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -52,6 +60,8 @@
     <button id="red" class="option red" onclick="chooseOption('red')">Option 1: 150 in Cash</button>
     <button id="blue" class="option blue" onclick="chooseOption('blue')">Option 2: Roadtrip mit Übernachtung</button>
     <p id="confirmation" class="hidden"></p>
+    <img id="car" class="hidden car" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Car_icon.svg" alt="Car Animation">
+    <audio id="honkSound" src="https://www.soundjay.com/transportation/car-horn-01.mp3"></audio>
 
     <script>
         const choiceKey = 'userChoice';
@@ -76,11 +86,27 @@
             if (option === 'blue') {
                 let phoneNumber = '491742593680'; // Nummer im internationalen Format
                 let message = encodeURIComponent('Der Roadtrip ist safe, jetzt müssen wir uns noch ein Wochenende aussuchen.');
-                window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+                
+                // Sound abspielen
+                document.getElementById('honkSound').play();
+                
+                // Animation starten
+                let car = document.getElementById('car');
+                car.classList.remove('hidden');
+                setTimeout(() => {
+                    car.style.transform = 'translateX(120vw)';
+                }, 100);
+                
+                // Verzögerung für Weiterleitung
+                setTimeout(() => {
+                    window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+                }, 2500);
             } else {
                 alert('Du hast 150 in Cash gewählt!');
             }
-            location.reload();
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
         }
     </script>
 </body>
