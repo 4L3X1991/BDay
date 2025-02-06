@@ -55,6 +55,13 @@
 
     <script>
         const choiceKey = 'userChoice';
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        if (urlParams.has('reset')) {
+            localStorage.removeItem(choiceKey);
+            window.location.href = window.location.pathname;
+        }
+
         const userChoice = localStorage.getItem(choiceKey);
         
         if (userChoice) {
