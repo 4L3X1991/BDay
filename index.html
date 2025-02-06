@@ -18,6 +18,7 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
+            position: relative;
         }
         .option {
             padding: 20px;
@@ -50,7 +51,7 @@
             position: absolute;
             bottom: 10%;
             left: -200px;
-            width: 150px;
+            width: 200px;
             transition: transform 2s ease-in-out;
         }
     </style>
@@ -60,7 +61,7 @@
     <button id="red" class="option red" onclick="chooseOption('red')">Option 1: 150 in Cash</button>
     <button id="blue" class="option blue" onclick="chooseOption('blue')">Option 2: Roadtrip mit Übernachtung</button>
     <p id="confirmation" class="hidden"></p>
-    <img id="car" class="hidden car" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Car_icon.svg" alt="Car Animation">
+    <img id="car" class="hidden car" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Red_car_side.svg" alt="Car Animation">
     <audio id="honkSound" src="https://www.soundjay.com/transportation/car-horn-01.mp3"></audio>
 
     <script>
