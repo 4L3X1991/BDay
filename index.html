@@ -20,6 +20,11 @@
             overflow: hidden;
             position: relative;
         }
+        .text-container {
+            max-width: 600px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
         .option {
             padding: 20px;
             font-size: 20px;
@@ -57,11 +62,18 @@
     </style>
 </head>
 <body>
-    <h1>Chose Your Option</h1>
+    <div class="text-container">
+        <h2>Hi Justin,</h2>
+        <p>Zunächst erstmal alles Gute zum Geburtstag.</p>
+        <p>Auf den nachfolgenden zwei Buttons kannst du dir dein Geschenk aussuchen. Achtung! Einmal den Button gedrückt, kann die Option <strong>NICHT</strong> wieder getauscht werden.</p>
+        <p><strong>Disclaimer:</strong></p>
+        <p>Option 1 ist sofort auszahlbar.</p>
+        <p>Option 2 erfordert aber langfristigere Planung. Der Trip findet jedoch dieses Jahr statt. Was beinhaltet der Trip? Essen wird ausgegeben, Fahrt bezahlt sowie eine Nacht im Hotel. Das Ziel kann dabei individuell von dir gewählt werden und muss lediglich mit dem Auto machbar sein. Alles andere obliegt dir.</p>
+    </div>
     <button id="red" class="option red" onclick="chooseOption('red')">Option 1: 150 in Cash</button>
     <button id="blue" class="option blue" onclick="chooseOption('blue')">Option 2: Roadtrip mit Übernachtung</button>
     <p id="confirmation" class="hidden"></p>
-    <img id="car" class="hidden car" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Red_car_side.svg" alt="Car Animation">
+    <img id="car" class="hidden car" src="https://cdn-icons-png.flaticon.com/512/744/744465.png" alt="Car Animation">
     <audio id="honkSound" src="https://www.soundjay.com/transportation/car-horn-01.mp3"></audio>
 
     <script>
