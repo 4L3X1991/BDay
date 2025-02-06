@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wähle deine Option</title>
+    <title>Chose Your Option</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Orbitron', sans-serif;
             text-align: center;
             margin: 50px;
             background-color: #121212;
@@ -27,6 +28,7 @@
             width: 80%;
             max-width: 300px;
             transition: transform 0.2s, opacity 0.2s;
+            font-weight: bold;
         }
         .option:hover {
             transform: scale(1.1);
@@ -46,9 +48,9 @@
     </style>
 </head>
 <body>
-    <h1>Wähle eine Option</h1>
-    <button id="red" class="option red" onclick="chooseOption('red')">Rote Pille: 150€ in Bar</button>
-    <button id="blue" class="option blue" onclick="chooseOption('blue')">Blaue Pille: Roadtrip</button>
+    <h1>Chose Your Option</h1>
+    <button id="red" class="option red" onclick="chooseOption('red')">Option 1: 150 in Cash</button>
+    <button id="blue" class="option blue" onclick="chooseOption('blue')">Option 2: Roadtrip mit Übernachtung</button>
     <p id="confirmation" class="hidden"></p>
 
     <script>
@@ -59,12 +61,18 @@
             document.getElementById('red').classList.add('hidden');
             document.getElementById('blue').classList.add('hidden');
             document.getElementById('confirmation').classList.remove('hidden');
-            document.getElementById('confirmation').innerText = `Du hast gewählt: ${userChoice === 'red' ? '150€ in Bar' : 'Roadtrip'}`;
+            document.getElementById('confirmation').innerText = `Du hast gewählt: ${userChoice === 'red' ? '150 in Cash' : 'Roadtrip mit Übernachtung'}`;
         }
 
         function chooseOption(option) {
             localStorage.setItem(choiceKey, option);
-            alert(option === 'red' ? 'Du hast 150€ in Bar gewählt!' : 'Du hast den Roadtrip gewählt!');
+            if (option === 'blue') {
+                let phoneNumber = '491742593680'; // Nummer im internationalen Format
+                let message = encodeURIComponent('Der Roadtrip ist safe, jetzt müssen wir uns noch ein Wochenende aussuchen.');
+                window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+            } else {
+                alert('Du hast 150 in Cash gewählt!');
+            }
             location.reload();
         }
     </script>
