@@ -5,40 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chose Your Option</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         body {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            margin: 50px;
+            margin: 20px;
             background-color: #121212;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
+            min-height: 100vh;
+            overflow-y: auto;
         }
         .text-container {
-            max-width: 600px;
+            max-width: 90%;
             margin-bottom: 20px;
             text-align: center;
+            font-size: 16px;
+            line-height: 1.5;
         }
         .option {
-            padding: 20px;
-            font-size: 20px;
-            margin: 15px;
+            padding: 15px;
+            font-size: 18px;
+            margin: 10px;
             cursor: pointer;
             border: none;
             border-radius: 10px;
-            width: 80%;
-            max-width: 300px;
+            width: 90%;
+            max-width: 350px;
             transition: transform 0.2s, opacity 0.2s;
             font-weight: bold;
         }
         .option:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             opacity: 0.9;
         }
         .red {
@@ -64,11 +65,11 @@
 <body>
     <div class="text-container">
         <h2>Hi Justin,</h2>
-        <p>Zunächst erstmal alles Gute zum Geburtstag.</p>
-        <p>Auf den nachfolgenden zwei Buttons kannst du dir dein Geschenk aussuchen. Achtung! Einmal den Button gedrückt, kann die Option <strong>NICHT</strong> wieder getauscht werden.</p>
-        <p><strong>Disclaimer:</strong></p>
-        <p>Option 1 ist sofort auszahlbar.</p>
-        <p>Option 2 erfordert aber langfristigere Planung. Der Trip findet jedoch dieses Jahr statt. Was beinhaltet der Trip? Essen wird ausgegeben, Fahrt bezahlt sowie eine Nacht im Hotel. Das Ziel kann dabei individuell von dir gewählt werden und muss lediglich mit dem Auto machbar sein. Alles andere obliegt dir.</p>
+        <p>zu deinem Geburtstag wünsche ich dir alles Gute! 🎉</p>
+        <p>Als kleines Geschenk darfst du dir eine der folgenden Optionen aussuchen. Aber Vorsicht: <strong>Deine Wahl ist endgültig!</strong> Einmal gedrückt, gibt es kein Zurück.</p>
+        <h3>Optionen</h3>
+        <p><strong>Option 1:</strong> Du erhältst sofort <strong>150€ in bar</strong>.</p>
+        <p><strong>Option 2:</strong> Ein <strong>Roadtrip mit Übernachtung</strong>. Der Trip findet dieses Jahr statt und beinhaltet die Fahrt, eine Übernachtung im Hotel sowie Essen. Das Ziel kannst du frei wählen, solange es mit dem Auto erreichbar ist.</p>
     </div>
     <button id="red" class="option red" onclick="chooseOption('red')">Option 1: 150 in Cash</button>
     <button id="blue" class="option blue" onclick="chooseOption('blue')">Option 2: Roadtrip mit Übernachtung</button>
