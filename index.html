@@ -5,11 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wähle deine Option</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        .option { padding: 20px; font-size: 20px; margin: 10px; cursor: pointer; border: none; border-radius: 5px; }
-        .red { background-color: red; color: white; }
-        .blue { background-color: blue; color: white; }
-        .hidden { display: none; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .option {
+            padding: 20px;
+            font-size: 20px;
+            margin: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 300px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .option:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+        .red {
+            background-color: #ff3b30;
+            color: white;
+        }
+        .blue {
+            background-color: #007aff;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
